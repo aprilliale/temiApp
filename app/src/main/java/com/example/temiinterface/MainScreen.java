@@ -2,15 +2,33 @@ package com.example.temiinterface;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 public class MainScreen extends AppCompatActivity {
+
+    ImageView imgView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+
+        imgViewListener();
+    }
+
+    private void imgViewListener() {
+        imgView = findViewById(R.id.imageView);
+
+        imgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainScreen.this, onPlaying.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -26,4 +44,5 @@ public class MainScreen extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
+
 }
