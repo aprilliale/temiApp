@@ -17,6 +17,13 @@ public class MainScreen extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
 
         imgViewListener();
+
+        //choosing team
+        /*
+        * If user choose blue team in phone showing onPlaying with activity_on_playing_blue
+        * Else if user choose read team in phone showing onPlaying with activity_on_playing
+        * Else if user got shot, showing onDeath with activity_on_death or + _blue
+        * */
     }
 
     private void imgViewListener() {
